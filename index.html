@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <script src="main.js"></script>
+    <title>Current Date and Time Project</title>
+    
   </head>
   <body>
     <h1>Hello World!</h1>
@@ -11,5 +11,25 @@
     <div id="display-element"></div>
     <button onclick="displayDate()">Click Me</button>
     <hr/>
+    <form id="calculateNumbers">
+      <br>
+      <div>Choose two numbers to calculate:</div>
+      <br>
+      <input type="number" id="first-Number" name="first-Number" placeholder="first number">
+      <input type="number" id="second-Number" name="second-Number" placeholder="second number">
+      <button type="submit" id="calculate">Add</button>
+      <br><br>
+     </form>
+     <div id="sum"></div>
+     <form id="checkThings"> 
+      <div>Compare two things for their truthiness or falsiness:<div>
+      <br>
+      <input type="text" id="first-Value" name="first-Value" placeholder="first value">
+      <input type="text" id="second-Value" name="second-Value" placeholder="second value">
+      <button type="submit" id="check">Check</button>
+    </form>
+    <div id="checked"></div>
+    <div id="trueOrFalse"></div>
   </body>
+  <script src="main.js"></script>
 </html>
