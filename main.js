@@ -35,26 +35,6 @@ const stringToNumber = (string1) => {
   // * Number
   // * NaN
   // * String
-  const whatDateType = (entry) => {
-    console.log(typeof entry);
-  }
-
-  
-// Write a JavaScript program that adds 2 numbers together.
-const add1 = (number1, number2) => {
-  let answer = number1 + number2;
-  return answer;
-}
-
-const addNum = document.getElementById('calculateNumbers');
-addNum.addEventListener("submit", e => {
-  e.preventDefault()
-  const num1 = document.getElementById("first-Number").value;
-  const num2 = document.getElementById("second-Number").value;
-  const sum1 = add1(stringToNumber(num1), stringToNumber(num2));
-  document.getElementById("sum").innerHTML = `The sum of ${num1} + ${num2} is ${sum1}.<br><br>`;
-});
-  
 const thingCheck = document.getElementById('checkThings');
 thingCheck.addEventListener("submit", e => {
   e.preventDefault()
@@ -62,15 +42,70 @@ thingCheck.addEventListener("submit", e => {
   let thing2 = document.getElementById("second-Value").value;
   if (!isNaN(thing1)) {
     thing1 = stringToNumber(thing1)
+  } else {
+    thing1 = bool(thing1)
   }
   if (!isNaN(thing2)) {
     thing2 = stringToNumber(thing2)
+  } else {
+    thing2 = bool(thing2)
   }
-  console.log(typeof thing1 + typeof thing2)
   document.getElementById("checked").innerHTML = `<br>${thing1} is a ${typeof thing1}, ${thing2} is a ${typeof thing2}.`;
   bothTrue(thing1, thing2)
   neitherTrue(thing1, thing2)
 });
+  
+
+  
+// Write a JavaScript program that adds 2 numbers together.
+const add1 = (number1, number2) => {
+  let answer = number1 + number2;
+  document.getElementById("answers").innerHTML = `The sum of ${number1} + ${number2} is ${answer}.<br><br>`;
+  return answer;
+}
+const subtract1 = (number1, number2) => {
+  let answer = number1 - number2;
+  document.getElementById("answers").innerHTML = `The difference of ${number1} - ${number2} is ${answer}.<br><br>`;
+  return answer;
+}
+const multiply1 = (number1, number2) => {
+  let answer = number1 * number2;
+  document.getElementById("answers").innerHTML = `The product of ${number1} x ${number2} is ${answer}.<br><br>`;
+  return answer;
+}
+const divide1 = (number1, number2) => {
+  let answer = number1 / number2;
+  document.getElementById("answers").innerHTML = `The quotient of ${number1} / ${number2} is ${answer}.<br><br>`;
+  return answer;
+}
+
+const bool = (things) => {
+  let thingy = things;
+  if (thingy === "true") {
+    thingy = true;
+  } else if (thingy === "false") {
+    thingy = false;
+  }
+  return thingy;
+}
+
+const calculate = document.getElementById('calculateNumbers');
+calculate.addEventListener("submit", e => {
+  e.preventDefault()
+  const num1 = document.getElementById("first-Number").value;
+  const num2 = document.getElementById("second-Number").value;
+  const operation = document.getElementById("operation").value;
+  if (operation === 'add') {
+    add1(stringToNumber(num1), stringToNumber(num2));
+  } else if (operation === 'subtract') {
+    subtract1(stringToNumber(num1), stringToNumber(num2));
+  } else if (operation === 'multiply') {
+    multiply1(stringToNumber(num1), stringToNumber(num2));
+  } else {
+    divide1(stringToNumber(num1), stringToNumber(num2));
+  }
+});
+  
 
 
 // Write a JavaScript program that runs only when 2 things are true.

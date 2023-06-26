@@ -17,10 +17,16 @@
       <br>
       <input type="number" id="first-Number" name="first-Number" placeholder="first number">
       <input type="number" id="second-Number" name="second-Number" placeholder="second number">
-      <button type="submit" id="calculate">Add</button>
+      <select name="operation" id="operation">
+        <option value="add">Add</option>
+        <option value="subtract">Subtract</option>
+        <option value="multiply">Multiply</option>
+        <option value="divide">Divide</option>
+      </select>
+      <button type="submit" id="calculate">Calculate</button>
       <br><br>
      </form>
-     <div id="sum"></div>
+     <div id="answers"></div>
      <form id="checkThings"> 
       <div>Compare two things for their truthiness or falsiness:<div>
       <br>
