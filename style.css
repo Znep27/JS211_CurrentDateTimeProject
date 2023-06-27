@@ -1,0 +1,23 @@
+body {
+    text-align: center;
+    font-weight: bold;
+    background-color: darkgray;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+h1 {
+    color: white;
+    background-color: black;
+    padding: 50px;
+}
+#display-element {
+    background-color: magenta;
+}
+#calculateNumbers, #answers {
+    background-color: darkgreen;
+    padding: 10px;
+}
+#checkThings, #checked {
+    background-color: blue;
+    padding: 20px;
+}
